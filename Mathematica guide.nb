@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       157,          7]
-NotebookDataLength[     74985,       1883]
-NotebookOptionsPosition[     72216,       1782]
-NotebookOutlinePosition[     72595,       1799]
-CellTagsIndexPosition[     72552,       1796]
+NotebookDataLength[     75997,       1900]
+NotebookOptionsPosition[     73226,       1799]
+NotebookOutlinePosition[     73605,       1816]
+CellTagsIndexPosition[     73562,       1813]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -33,54 +33,71 @@ next line and press shift enter):\
 Cell[BoxData[{
  RowBox[{
   RowBox[{
+   RowBox[{"minVersion", "=", "9"}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"updateInitFile", "::", "tooLowVersionError"}], "=", 
+   RowBox[{"\"\<You need at least Mathematica version \>\"", "<>", 
+    RowBox[{"ToString", "@", "minVersion"}], "<>", 
+    "\"\< to use this init file.\>\""}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
    RowBox[{
     RowBox[{"updateInitFile", "::", "networkError"}], "=", 
     "\"\<Failed to retrieve the latest init.m version from github.\>\""}], 
    ";"}], "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
  RowBox[{
-  RowBox[{"initPath", " ", "=", " ", 
-   RowBox[{"ToFileName", "[", 
-    RowBox[{
-     RowBox[{"{", 
-      RowBox[{"$UserBaseDirectory", ",", " ", "\"\<Kernel\>\""}], "}"}], ",", 
-     " ", "\"\<init.m\>\""}], "]"}]}], ";"}], "\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{"newest", " ", "=", " ", 
-   RowBox[{
-   "URLFetch", "@", 
-    "\"\<https://raw.github.com/Tyilo/Mathematica-init.m/master/init.m\>\""}]}\
-], ";"}], "\[IndentingNewLine]", 
- RowBox[{
   RowBox[{"If", "[", 
    RowBox[{
-    RowBox[{
-     RowBox[{"newest", "===", "$Failed"}], "||", 
-     RowBox[{
-      RowBox[{
-       RowBox[{"StringSplit", "[", 
-        RowBox[{"newest", ",", "\"\<\\n\>\""}], "]"}], "[", 
-       RowBox[{"[", "1", "]"}], "]"}], "!=", "\"\<(* ::Package:: *)\>\""}]}], 
-    ",", 
+    RowBox[{"minVersion", ">", "$VersionNumber"}], ",", "\[IndentingNewLine]", 
     RowBox[{"Message", "[", 
-     RowBox[{"updateInitFile", "::", "networkError"}], "]"}], ",", 
+     RowBox[{"updateInitFile", "::", "tooLowVersionError"}], "]"}], ",", 
     "\[IndentingNewLine]", 
     RowBox[{
-     RowBox[{"WriteString", "[", 
+     RowBox[{"initPath", " ", "=", " ", 
+      RowBox[{"ToFileName", "[", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{"$UserBaseDirectory", ",", " ", "\"\<Kernel\>\""}], "}"}], 
+        ",", " ", "\"\<init.m\>\""}], "]"}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"newest", " ", "=", " ", 
       RowBox[{
-       RowBox[{"f", " ", "=", " ", 
-        RowBox[{"OpenWrite", "@", "initPath"}]}], ",", " ", "newest"}], "]"}],
-      ";", "\n", 
-     RowBox[{"Close", "@", "f"}], ";", "\[IndentingNewLine]", 
-     RowBox[{
-     "MessageDialog", "[", 
-      "\"\<Mathematica's init.m has been updated!\nRestart Mathematica to \
+      "URLFetch", "@", 
+       "\"\<https://raw.github.com/Tyilo/Mathematica-init.m/master/init.m\>\"\
+"}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"newest", "===", "$Failed"}], "||", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"StringSplit", "[", 
+           RowBox[{"newest", ",", "\"\<\\n\>\""}], "]"}], "[", 
+          RowBox[{"[", "1", "]"}], "]"}], "!=", 
+         "\"\<(* ::Package:: *)\>\""}]}], ",", "\[IndentingNewLine]", 
+       RowBox[{"Message", "[", 
+        RowBox[{"updateInitFile", "::", "networkError"}], "]"}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"WriteString", "[", 
+         RowBox[{
+          RowBox[{"f", " ", "=", " ", 
+           RowBox[{"OpenWrite", "@", "initPath"}]}], ",", " ", "newest"}], 
+         "]"}], ";", "\[IndentingNewLine]", 
+        RowBox[{"Close", "@", "f"}], ";", "\[IndentingNewLine]", 
+        RowBox[{
+        "MessageDialog", "[", 
+         "\"\<Mathematica's init.m has been updated!\nRestart Mathematica to \
 apply the changes.\>\"", "]"}], ";"}]}], "\[IndentingNewLine]", "]"}], 
-  ";"}]}], "Input",
+     ";"}]}], "\[IndentingNewLine]", "]"}], ";"}]}], "Input",
  CellChangeTimes->{{3.589278486828107*^9, 3.589278567602358*^9}, {
   3.593368233743514*^9, 3.5933682549650383`*^9}, {3.593368287582231*^9, 
   3.5933682891631927`*^9}, {3.5933683471316032`*^9, 3.5933683501239223`*^9}, {
   3.593368516687832*^9, 3.593368526725659*^9}, {3.5933686188365507`*^9, 
-  3.5933686350829887`*^9}}]
+  3.5933686350829887`*^9}, {3.59462914568081*^9, 3.594629185831127*^9}, {
+  3.594629330352742*^9, 3.594629369148487*^9}, {3.5946294209715014`*^9, 
+  3.594629542348362*^9}, {3.5946295725939293`*^9, 3.5946295900503883`*^9}}]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -1801,87 +1818,87 @@ Notebook[{
 Cell[CellGroupData[{
 Cell[579, 22, 100, 1, 80, "Section"],
 Cell[682, 25, 276, 5, 30, "Text"],
-Cell[961, 32, 1930, 50, 199, "Input"]
+Cell[961, 32, 2940, 67, 318, "Input"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[2928, 87, 94, 1, 80, "Section"],
-Cell[3025, 90, 4518, 146, 413, "Text"]
+Cell[3938, 104, 94, 1, 80, "Section"],
+Cell[4035, 107, 4518, 146, 413, "Text"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[7580, 241, 91, 1, 80, "Section"],
-Cell[7674, 244, 7039, 254, 788, "Text"]
+Cell[8590, 258, 91, 1, 80, "Section"],
+Cell[8684, 261, 7039, 254, 784, "Text"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[14750, 503, 106, 1, 80, "Section"],
+Cell[15760, 520, 106, 1, 80, "Section"],
 Cell[CellGroupData[{
-Cell[14881, 508, 188, 2, 44, "Subsection"],
-Cell[15072, 512, 158, 3, 30, "Text"],
+Cell[15891, 525, 188, 2, 44, "Subsection"],
+Cell[16082, 529, 158, 3, 30, "Text"],
 Cell[CellGroupData[{
-Cell[15255, 519, 442, 11, 64, "Input"],
-Cell[15700, 532, 495, 14, 48, "Output"]
+Cell[16265, 536, 442, 11, 64, "Input"],
+Cell[16710, 549, 495, 14, 48, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[16232, 551, 283, 8, 33, "Input"],
-Cell[16518, 561, 428, 12, 51, "Output"]
+Cell[17242, 568, 283, 8, 33, "Input"],
+Cell[17528, 578, 428, 12, 51, "Output"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[16995, 579, 232, 3, 44, "Subsection"],
+Cell[18005, 596, 232, 3, 44, "Subsection"],
 Cell[CellGroupData[{
-Cell[17252, 586, 531, 13, 35, "Input"],
-Cell[17786, 601, 5734, 103, 243, "Output"]
+Cell[18262, 603, 531, 13, 35, "Input"],
+Cell[18796, 618, 5734, 103, 243, "Output"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[23569, 710, 97, 1, 44, "Subsection"],
-Cell[23669, 713, 127, 1, 30, "Text"],
+Cell[24579, 727, 97, 1, 44, "Subsection"],
+Cell[24679, 730, 127, 1, 30, "Text"],
 Cell[CellGroupData[{
-Cell[23821, 718, 904, 29, 68, "Input"],
-Cell[24728, 749, 257, 7, 33, "Output"],
-Cell[24988, 758, 806, 26, 132, "Output"]
+Cell[24831, 735, 904, 29, 68, "Input"],
+Cell[25738, 766, 257, 7, 33, "Output"],
+Cell[25998, 775, 806, 26, 132, "Output"]
 }, Open  ]],
-Cell[25809, 787, 115, 1, 30, "Text"],
+Cell[26819, 804, 115, 1, 30, "Text"],
 Cell[CellGroupData[{
-Cell[25949, 792, 397, 10, 46, "Input"],
-Cell[26349, 804, 351, 9, 28, "Output"],
-Cell[26703, 815, 285, 7, 33, "Output"]
+Cell[26959, 809, 397, 10, 46, "Input"],
+Cell[27359, 821, 351, 9, 28, "Output"],
+Cell[27713, 832, 285, 7, 33, "Output"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[27037, 828, 106, 1, 44, "Subsection"],
+Cell[28047, 845, 106, 1, 44, "Subsection"],
 Cell[CellGroupData[{
-Cell[27168, 833, 775, 24, 140, "Input"],
-Cell[27946, 859, 865, 25, 44, "Output"],
-Cell[28814, 886, 284, 7, 33, "Output"],
-Cell[29101, 895, 140, 2, 28, "Output"]
+Cell[28178, 850, 775, 24, 140, "Input"],
+Cell[28956, 876, 865, 25, 44, "Output"],
+Cell[29824, 903, 284, 7, 33, "Output"],
+Cell[30111, 912, 140, 2, 28, "Output"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[29290, 903, 148, 2, 44, "Subsection"],
-Cell[29441, 907, 233, 5, 30, "Text"],
+Cell[30300, 920, 148, 2, 44, "Subsection"],
+Cell[30451, 924, 233, 5, 30, "Text"],
 Cell[CellGroupData[{
-Cell[29699, 916, 748, 21, 98, "Input"],
-Cell[30450, 939, 3098, 65, 264, "Output"]
+Cell[30709, 933, 748, 21, 98, "Input"],
+Cell[31460, 956, 3098, 65, 264, "Output"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[33597, 1010, 156, 2, 44, "Subsection"],
-Cell[33756, 1014, 135, 3, 30, "Text"],
+Cell[34607, 1027, 156, 2, 44, "Subsection"],
+Cell[34766, 1031, 135, 3, 30, "Text"],
 Cell[CellGroupData[{
-Cell[33916, 1021, 281, 6, 28, "Input"],
-Cell[34200, 1029, 13007, 298, 200, "Output"]
+Cell[34926, 1038, 281, 6, 28, "Input"],
+Cell[35210, 1046, 13007, 298, 200, "Output"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[47256, 1333, 159, 2, 44, "Subsection"],
-Cell[47418, 1337, 236, 3, 30, "Text"],
+Cell[48266, 1350, 159, 2, 44, "Subsection"],
+Cell[48428, 1354, 236, 3, 30, "Text"],
 Cell[CellGroupData[{
-Cell[47679, 1344, 441, 11, 54, "Input"],
-Cell[48123, 1357, 171, 3, 28, "Output"]
+Cell[48689, 1361, 441, 11, 54, "Input"],
+Cell[49133, 1374, 171, 3, 28, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[48331, 1365, 467, 11, 50, "Input"],
-Cell[48801, 1378, 23375, 399, 239, "Output"]
+Cell[49341, 1382, 467, 11, 50, "Input"],
+Cell[49811, 1395, 23375, 399, 239, "Output"]
 }, Open  ]]
 }, Open  ]]
 }, Open  ]]
