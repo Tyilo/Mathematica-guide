@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       157,          7]
-NotebookDataLength[    274023,       6743]
-NotebookOptionsPosition[    262428,       6346]
-NotebookOutlinePosition[    262806,       6363]
-CellTagsIndexPosition[    262763,       6360]
+NotebookDataLength[    280467,       6989]
+NotebookOptionsPosition[    268253,       6572]
+NotebookOutlinePosition[    268631,       6589]
+CellTagsIndexPosition[    268588,       6586]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -5906,6 +5906,232 @@ Cell[BoxData[
    3.589281673365938*^9, 3.589281679542925*^9}, 3.5892817223780117`*^9, 
    3.593368191344898*^9, 3.604572420841835*^9}]
 }, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["walkInt", "Subsection",
+ CellChangeTimes->{{3.604610324894009*^9, 3.604610326132601*^9}}],
+
+Cell["\<\
+Shows the steps needed to integrate an expression:\
+\>", "Text",
+ CellChangeTimes->{{3.6046103304042397`*^9, 3.6046103393488817`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{"walkInt", "[", 
+   RowBox[{
+    RowBox[{
+     SuperscriptBox["x", "2"], "\[CenterDot]", 
+     RowBox[{"log", "(", "x", ")"}]}], ",", "x"}], "]"}], 
+  TraditionalForm]], "Input",
+ CellChangeTimes->{{3.6046103402860394`*^9, 3.604610353437377*^9}}],
+
+Cell[BoxData[
+ TagBox[
+  FormBox[
+   TagBox[
+    RowBox[{"\[Integral]", 
+     RowBox[{
+      RowBox[{
+       SuperscriptBox["x", "2"], " ", 
+       RowBox[{"log", "(", "x", ")"}]}], "\[DifferentialD]", "x"}]}],
+    DisplayForm],
+   TraditionalForm],
+  HoldForm]], "Output",
+ CellFrame->False,
+ CellMargins->{{Inherited, Inherited}, {10, 10}},
+ CellEditDuplicate->False,
+ Evaluatable->False,
+ CellChangeTimes->{3.604610353973794*^9}],
+
+Cell[BoxData[
+ TooltipBox[
+  RowBox[{
+   InterpretationBox["=",
+    Sequence[]], "  ", 
+   TagBox[
+    RowBox[{
+     RowBox[{"-", 
+      FormBox[
+       TagBox[
+        RowBox[{"\[Integral]", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"(", 
+            FormBox[
+             TagBox[
+              RowBox[{
+               FractionBox["\[DifferentialD]", 
+                RowBox[{"\[DifferentialD]", "x"}]], 
+               RowBox[{"log", "(", "x", ")"}]}],
+              DisplayForm],
+             TraditionalForm], ")"}], " ", 
+           FormBox[
+            TagBox[
+             RowBox[{"\[Integral]", 
+              RowBox[{
+               SuperscriptBox["x", "2"], "\[DifferentialD]", "x"}]}],
+             DisplayForm],
+            TraditionalForm]}], "\[DifferentialD]", "x"}]}],
+        DisplayForm],
+       TraditionalForm]}], "+", 
+     RowBox[{
+      RowBox[{"(", 
+       FormBox[
+        TagBox[
+         RowBox[{"\[Integral]", 
+          RowBox[{
+           SuperscriptBox["x", "2"], "\[DifferentialD]", "x"}]}],
+         DisplayForm],
+        TraditionalForm], ")"}], " ", 
+      RowBox[{"log", "(", "x", ")"}]}]}],
+    HoldForm]}],
+  "Product Rule",
+  TooltipStyle->"TextStyling"]], "Output",
+ CellFrame->False,
+ CellMargins->{{Inherited, Inherited}, {10, 10}},
+ CellEditDuplicate->False,
+ Evaluatable->False,
+ CellChangeTimes->{3.604610354015641*^9}],
+
+Cell[BoxData[
+ TooltipBox[
+  RowBox[{
+   InterpretationBox["=",
+    Sequence[]], "  ", 
+   TagBox[
+    RowBox[{
+     RowBox[{"-", 
+      FormBox[
+       TagBox[
+        RowBox[{"\[Integral]", 
+         RowBox[{
+          FractionBox[
+           FormBox[
+            TagBox[
+             RowBox[{"\[Integral]", 
+              RowBox[{
+               SuperscriptBox["x", "2"], "\[DifferentialD]", "x"}]}],
+             DisplayForm],
+            TraditionalForm], "x"], "\[DifferentialD]", "x"}]}],
+        DisplayForm],
+       TraditionalForm]}], "+", 
+     RowBox[{
+      RowBox[{"(", 
+       FormBox[
+        TagBox[
+         RowBox[{"\[Integral]", 
+          RowBox[{
+           SuperscriptBox["x", "2"], "\[DifferentialD]", "x"}]}],
+         DisplayForm],
+        TraditionalForm], ")"}], " ", 
+      RowBox[{"log", "(", "x", ")"}]}]}],
+    HoldForm]}],
+  "Specific Rules",
+  TooltipStyle->"TextStyling"]], "Output",
+ CellFrame->False,
+ CellMargins->{{Inherited, Inherited}, {10, 10}},
+ CellEditDuplicate->False,
+ Evaluatable->False,
+ CellChangeTimes->{3.6046103540647583`*^9}],
+
+Cell[BoxData[
+ TooltipBox[
+  RowBox[{
+   InterpretationBox["=",
+    Sequence[]], "  ", 
+   TagBox[
+    RowBox[{
+     RowBox[{"-", 
+      FormBox[
+       TagBox[
+        RowBox[{"\[Integral]", 
+         RowBox[{
+          FractionBox[
+           SuperscriptBox["x", "2"], "3"], "\[DifferentialD]", "x"}]}],
+        DisplayForm],
+       TraditionalForm]}], "+", 
+     RowBox[{
+      FractionBox["1", "3"], " ", 
+      SuperscriptBox["x", "3"], " ", 
+      RowBox[{"log", "(", "x", ")"}]}]}],
+    HoldForm]}],
+  "Power Rule",
+  TooltipStyle->"TextStyling"]], "Output",
+ CellFrame->False,
+ CellMargins->{{Inherited, Inherited}, {10, 10}},
+ CellEditDuplicate->False,
+ Evaluatable->False,
+ CellChangeTimes->{3.604610354111212*^9}],
+
+Cell[BoxData[
+ TooltipBox[
+  RowBox[{
+   InterpretationBox["=",
+    Sequence[]], "  ", 
+   TagBox[
+    RowBox[{
+     RowBox[{
+      RowBox[{"-", 
+       FractionBox["1", "3"]}], " ", 
+      FormBox[
+       TagBox[
+        RowBox[{"\[Integral]", 
+         RowBox[{
+          SuperscriptBox["x", "2"], "\[DifferentialD]", "x"}]}],
+        DisplayForm],
+       TraditionalForm]}], "+", 
+     RowBox[{
+      FractionBox["1", "3"], " ", 
+      SuperscriptBox["x", "3"], " ", 
+      RowBox[{"log", "(", "x", ")"}]}]}],
+    HoldForm]}],
+  "Linearity Rule",
+  TooltipStyle->"TextStyling"]], "Output",
+ CellFrame->False,
+ CellMargins->{{Inherited, Inherited}, {10, 10}},
+ CellEditDuplicate->False,
+ Evaluatable->False,
+ CellChangeTimes->{3.604610354165946*^9}],
+
+Cell[BoxData[
+ TooltipBox[
+  RowBox[{
+   InterpretationBox["=",
+    Sequence[]], "  ", 
+   TagBox[
+    RowBox[{
+     RowBox[{"-", 
+      FractionBox[
+       SuperscriptBox["x", "3"], "9"]}], "+", 
+     RowBox[{
+      FractionBox["1", "3"], " ", 
+      SuperscriptBox["x", "3"], " ", 
+      RowBox[{"log", "(", "x", ")"}]}]}],
+    HoldForm]}],
+  "Power Rule",
+  TooltipStyle->"TextStyling"]], "Output",
+ CellFrame->False,
+ CellMargins->{{Inherited, Inherited}, {10, 10}},
+ CellEditDuplicate->False,
+ Evaluatable->False,
+ CellChangeTimes->{3.604610354214425*^9}],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{
+    FractionBox["1", "3"], " ", 
+    SuperscriptBox["x", "3"], " ", 
+    RowBox[{"log", "(", "x", ")"}]}], "-", 
+   FractionBox[
+    SuperscriptBox["x", "3"], "9"]}], TraditionalForm]], "Output",
+ CellChangeTimes->{3.604610354260936*^9}]
+}, Open  ]]
 }, Open  ]]
 }, Open  ]],
 
@@ -6166,7 +6392,7 @@ Cell[BoxData[
        DynamicBox[ToBoxes[
          Pane[
           First[steps$2338], ImageSize -> 10000], TraditionalForm],
-        ImageSizeCache->{10000., {36., 42.}}]}
+        ImageSizeCache->{10000., {4., 10.}}]}
      },
      DefaultBaseStyle->"Column",
      GridBoxAlignment->{"Columns" -> {{Left}}},
@@ -6694,54 +6920,74 @@ Cell[CellGroupData[{
 Cell[248094, 5884, 283, 8, 33, "Input"],
 Cell[248380, 5894, 450, 12, 51, "Output"]
 }, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[248879, 5912, 95, 1, 44, "Subsection"],
+Cell[248977, 5915, 144, 3, 30, "Text"],
+Cell[CellGroupData[{
+Cell[249146, 5922, 280, 8, 35, "Input"],
+Cell[249429, 5932, 432, 16, 52, "Output",
+ Evaluatable->False],
+Cell[249864, 5950, 1379, 48, 53, "Output",
+ Evaluatable->False],
+Cell[251246, 6000, 1079, 39, 57, "Output",
+ Evaluatable->False],
+Cell[252328, 6041, 724, 27, 55, "Output",
+ Evaluatable->False],
+Cell[253055, 6070, 751, 28, 53, "Output",
+ Evaluatable->False],
+Cell[253809, 6100, 560, 21, 55, "Output",
+ Evaluatable->False],
+Cell[254372, 6123, 284, 9, 86, "Output"]
+}, Open  ]]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[248891, 5913, 130, 3, 80, "Section"],
+Cell[254717, 6139, 130, 3, 80, "Section"],
 Cell[CellGroupData[{
-Cell[249046, 5920, 96, 1, 44, "Subsection"],
-Cell[249145, 5923, 283, 6, 30, "Text"],
+Cell[254872, 6146, 96, 1, 44, "Subsection"],
+Cell[254971, 6149, 283, 6, 30, "Text"],
 Cell[CellGroupData[{
-Cell[249453, 5933, 727, 23, 35, "Input"],
-Cell[250183, 5958, 1757, 37, 371, "Output"]
+Cell[255279, 6159, 727, 23, 35, "Input"],
+Cell[256009, 6184, 1757, 37, 337, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[251977, 6000, 627, 14, 46, "Input"],
-Cell[252607, 6016, 239, 4, 28, "Output"]
+Cell[257803, 6226, 627, 14, 46, "Input"],
+Cell[258433, 6242, 239, 4, 28, "Output"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[252895, 6026, 95, 1, 44, "Subsection"],
-Cell[252993, 6029, 127, 3, 30, "Text"],
+Cell[258721, 6252, 95, 1, 44, "Subsection"],
+Cell[258819, 6255, 127, 3, 30, "Text"],
 Cell[CellGroupData[{
-Cell[253145, 6036, 748, 21, 28, "Input"],
-Cell[253896, 6059, 3263, 72, 102, "Output"]
+Cell[258971, 6262, 748, 21, 28, "Input"],
+Cell[259722, 6285, 3263, 72, 102, "Output"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[257208, 6137, 104, 1, 44, "Subsection"],
-Cell[257315, 6140, 202, 6, 30, "Text"],
+Cell[263034, 6363, 104, 1, 44, "Subsection"],
+Cell[263141, 6366, 202, 6, 30, "Text"],
 Cell[CellGroupData[{
-Cell[257542, 6150, 239, 6, 28, "Input"],
-Cell[257784, 6158, 658, 19, 150, "Output"]
+Cell[263368, 6376, 239, 6, 28, "Input"],
+Cell[263610, 6384, 657, 19, 52, "Output"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[258491, 6183, 93, 1, 44, "Subsection"],
-Cell[258587, 6186, 198, 4, 30, "Text"],
+Cell[264316, 6409, 93, 1, 44, "Subsection"],
+Cell[264412, 6412, 198, 4, 30, "Text"],
 Cell[CellGroupData[{
-Cell[258810, 6194, 247, 8, 45, "Input"],
-Cell[259060, 6204, 437, 17, 53, "Output",
+Cell[264635, 6420, 247, 8, 45, "Input"],
+Cell[264885, 6430, 437, 17, 53, "Output",
  Evaluatable->False],
-Cell[259500, 6223, 698, 27, 71, "Output",
+Cell[265325, 6449, 698, 27, 71, "Output",
  Evaluatable->False],
-Cell[260201, 6252, 893, 34, 71, "Output",
+Cell[266026, 6478, 893, 34, 71, "Output",
  Evaluatable->False],
-Cell[261097, 6288, 670, 26, 71, "Output",
+Cell[266922, 6514, 670, 26, 71, "Output",
  Evaluatable->False],
-Cell[261770, 6316, 431, 17, 61, "Output",
+Cell[267595, 6542, 431, 17, 61, "Output",
  Evaluatable->False],
-Cell[262204, 6335, 184, 6, 57, "Output"]
+Cell[268029, 6561, 184, 6, 57, "Output"]
 }, Open  ]]
 }, Open  ]]
 }, Open  ]]
